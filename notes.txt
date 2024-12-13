@@ -4,3 +4,4 @@ Gym management/rewards program
 - Current Active members, All-time members
 - Add, remove, search members
 - Point system: Add, deduct points
+    (Quick add point system & User input point system)
