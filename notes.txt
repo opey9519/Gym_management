@@ -2,6 +2,6 @@ Gym management/rewards program
 
 - Struct to hold gym members data (Name, email, id, points)
 - Current Active members, All-time members
-- Add, remove, search members
+- Add, remove, search members (display individuals upon search), display members
 - Point system: Add, deduct points
     (Quick add point system & User input point system)
