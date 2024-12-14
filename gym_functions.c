@@ -40,11 +40,15 @@ struct node *add_member(struct node *root, char *first_name, char *last_name, ch
     }
 }
 
-// Function utilizes binary search by last name
+// Function utilizes binary search by last name and prints if found
 struct node *search(struct node *root, char *last_name)
 {
     if (root == NULL || strcmp(root->last_name, last_name) == 0)
     {
+        if (strcmp(root->last_name, last_name) == 0)
+        {
+            printf("Name: %s %s, Email: %s, Id: %d, Points: %d", root->first_name, root->last_name, root->email, root->id, root->points);
+        }
         return root;
     }
     if (strcmp(root->last_name, last_name) > 0)
@@ -102,6 +106,30 @@ struct node *delete_member(struct node *root, char *last_name)
     }
 
     return root;
+}
+
+// Finds node with minimum value
+struct node *min_value_node(struct node *node)
+{
+    struct node *current = node;
+
+    while (current && current->left != NULL)
+    {
+        current = current->left;
+    }
+
+    return current;
+}
+
+// Depth First Search (DFS) Algorithm to display all members
+struct node *in_order_traversal(struct node *root)
+{
+    if (root != NULL)
+    {
+        in_order_traversal(root->left);
+        printf("Name: %s %s, Email: %s, Id: %d, Points: %d", root->first_name, root->last_name, root->email, root->id, root->points);
+        in_order_traversal(root->right);
+    }
 }
 
 // Collection of functions to quick add/subtract points from member
