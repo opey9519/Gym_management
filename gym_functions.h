@@ -22,7 +22,7 @@ struct node
 struct node *min_value_node(struct node *node);
 
 // Depth First Search (DFS) Algorithm to display all members
-struct node *in_order_traversal(struct node *root);
+void in_order_traversal(struct node *root);
 
 // Function to create new node
 struct node *add_node(char *first_name, char *last_name, char *email, int id, int points);
