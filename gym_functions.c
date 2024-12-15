@@ -122,12 +122,12 @@ struct node *min_value_node(struct node *node)
 }
 
 // Depth First Search (DFS) Algorithm to display all members
-struct node *in_order_traversal(struct node *root)
+void in_order_traversal(struct node *root)
 {
     if (root != NULL)
     {
         in_order_traversal(root->left);
-        printf("Name: %s %s, Email: %s, Id: %d, Points: %d", root->first_name, root->last_name, root->email, root->id, root->points);
+        printf("\nName: %s %s, Email: %s, Id: %d, Points: %d\n", root->first_name, root->last_name, root->email, root->id, root->points);
         in_order_traversal(root->right);
     }
 }
